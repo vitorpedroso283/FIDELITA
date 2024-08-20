@@ -57,6 +57,6 @@ class CustomerService
      */
     public function getCustomerRewardsStatus(int $id)
     {
-        return Customer::with(['points', 'redemptions'])->findOrFail($id);
+        return Customer::with(['points', 'redemptions.reward'])->findOrFail($id);
     }
 }
