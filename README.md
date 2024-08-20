@@ -120,6 +120,6 @@ Obrigado por utilizar a Fidelita API!
 
 Aproveitem para prestigiar a obra de arte que é a minha gatinha também 😉.
 
-![WhatsApp Image 2024-08-19 at 23.12.24.jpeg](https://api.apidog.com/api/v1/projects/637470/resources/344161/image-preview)
+https://drive.google.com/file/d/1AHOpkiOmdhJI5JutObuvDbciVmyFwfTk/view?usp=drive_link
 
-![WhatsApp Image 2024-08-19 at 23.12.40.jpeg](https://api.apidog.com/api/v1/projects/637470/resources/344162/image-preview)
+https://drive.google.com/file/d/1_MNXNOWrPFg0sn04QyetzyQb-RDolNCg/view?usp=sharing
