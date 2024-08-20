@@ -2,7 +2,10 @@
 
 ## Introdução
 
-**Fidelita API** é uma aplicação desenvolvida como teste técnico para a empresa Fidelize. O nome "Fidelita" é uma homenagem à minha fiel companheira de código, minha gata Lolita, que sempre esteve ao meu lado durante o desenvolvimento. A aplicação é projetada para gerenciar e processar pontos de clientes, permitindo a acumulação e resgate de recompensas, solucionando a problemática que foi proposta pela Fidelize.
+A Fidelita API é uma aplicação desenvolvida como parte de um teste técnico para a empresa Fidelize. O nome "Fidelita" é uma homenagem à minha fiel companheira de código, minha gata Lolita, que sempre esteve ao meu lado durante o desenvolvimento da aplicação.
+
+## Objetivo da Aplicação:
+A Fidelita API foi projetada para gerenciar e processar pontos de clientes, permitindo a acumulação e resgate de recompensas. A aplicação atende à problemática proposta pela Fidelize, que visa implementar um programa de fidelidade para seus clientes. O sistema permite que cada cliente ganhe 1 ponto a cada R$5,00 gastos e possibilita o resgate de prêmios com base no saldo de pontos acumulado.
 
 ## Arquitetura
 
@@ -120,6 +123,6 @@ Obrigado por utilizar a Fidelita API!
 
 Aproveitem para prestigiar a obra de arte que é a minha gatinha também 😉.
 
-https://drive.google.com/file/d/1AHOpkiOmdhJI5JutObuvDbciVmyFwfTk/view?usp=drive_link
+![WhatsApp Image 2024-08-19 at 23.12.24.jpeg](https://api.apidog.com/api/v1/projects/637470/resources/344161/image-preview)
 
-https://drive.google.com/file/d/1_MNXNOWrPFg0sn04QyetzyQb-RDolNCg/view?usp=sharing
+![WhatsApp Image 2024-08-19 at 23.12.40.jpeg](https://api.apidog.com/api/v1/projects/637470/resources/344162/image-preview)
