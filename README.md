@@ -122,7 +122,5 @@ php artisan schedule:work
 Obrigado por utilizar a Fidelita API!
 
 Aproveitem para prestigiar a obra de arte que é a minha gatinha também 😉.
-
-![WhatsApp Image 2024-08-19 at 23.12.24.jpeg](https://api.apidog.com/api/v1/projects/637470/resources/344161/image-preview)
-
-![WhatsApp Image 2024-08-19 at 23.12.40.jpeg](https://api.apidog.com/api/v1/projects/637470/resources/344162/image-preview)
+![Lolita 1](public/images/lolita.jpeg)
+![Lolita 2](public/images/lolita1.jpeg)
