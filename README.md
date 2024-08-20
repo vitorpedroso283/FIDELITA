@@ -102,7 +102,7 @@ Existe um arquivo dentro do repositório chamado de  Customer.postman_collection
 
 A Fidelita API foi projetada com os seguintes pontos em mente:
 
-- **Autenticação**: Não foram utilizadas bibliotecas de autenticação padrão. Em vez disso, foram utilizados tokens fixos e um middleware personalizado foi criado para gerenciar a autenticação.
+- **Autenticação**: Não foram utilizadas bibliotecas de autenticação padrão. Em vez disso, foram utilizados tokens fixos que foram fornecidos (dentro de uma tabela no BD) e um middleware personalizado foi criado para gerenciar a autenticação. Essa abordagem foi escolhida para simplificar o teste técnico, embora em um ambiente de produção eu utilizaria uma solução mais robusta como JWT ou OAuth para autenticação e autorização.
   
 - **Processamento de Emails**: Os emails foram configurados para serem processados em segundo plano utilizando queues. No entanto, para a apresentação do teste, o driver `sync` foi utilizado como conexão para facilitar a utilização e garantir que os emails sejam enviados imediatamente.
 
