@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "d784d7cb-7b19-4ff3-be20-8ce004edbfc1",
+		"name": "Customer",
+		"description": "Esta coleção documenta os endpoints da API relacionados à gestão de clientes, pontos e recompensas na aplicação Fidelita. Abaixo estão descritos os detalhes de cada endpoint disponível para interagir com a API.\n\n---\n\nEssa documentação fornece uma visão geral dos endpoints da API para gerenciamento de clientes, pontos e recompensas. Adapte conforme necessário e adicione exemplos de resposta e detalhes adicionais que possam ser úteis para os desenvolvedores que utilizarão essa APEsta coleção documenta os endpoints da API relacionados à gestão de clientes, pontos e recompensas na aplicação Fidelita. Abaixo estão descritos os detalhes de cada endpoint disponível para interagir com a API.\n\n---\n\n**AUTORIZAÇÃO:** Por padrão, todas as requests dessas collection herdam o Bearer da colletiction, para facilitar a troca dos tokens de uma só vez para todas as rotas.\n\n**VARIÁVEIS DE AMBIENTE:** Se faz necessário a criação de um ambiente para a API e a criação da variável **BASE_URL**, com o valor do endereço padrão da API. Por exemplo **http://localhost:8000/api/v1**",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25575786"
+	},
+	"item": [
+		{
+			"name": "Create Customer (POST /customers)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fullname\": \"Vitor Pedroso\",\n    \"phonenumber\": \"(35)984162931\",\n    \"email\": \"vitorsamuelpedroso@gmail.com\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/customers",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"customers"
+					]
+				},
+				"description": "- **Método**: POST\n    \n- **URL**: `/v1/customers`\n    \n- **Descrição**: Cria um novo cliente na base de dados.\n    \n- **Autorização**: Requer permissão `001`.\n    \n- **Respostas**:\n    \n    - **201 Created**: Cliente criado com sucesso.\n        \n    - **400 Bad Request**: Dados inválidos ou falta de informações obrigatórias."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer By Identifier - Email Or Id (GET /customers/{identifier})",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/customers/vitorsamuel283@gmail.com",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"customers",
+						"vitorsamuel283@gmail.com"
+					]
+				},
+				"description": "### 2\\. Obter Informações de um Cliente\n\n- **Método**: GET\n    \n- **URL**: `/v1/customers/{identifier}`\n    \n- **Descrição**: Obtém as informações detalhadas de um cliente pelo identificador fornecido.\n    \n- **Autorização**: Requer permissão `002`.\n    \n- **Parâmetros de URL**:\n    \n    - `identifier`: Identificador único do cliente (ID ou e-mail).\n        \n- **Respostas**:\n    \n    - **200 OK**: Informações do cliente retornadas com sucesso.\n        \n    - **404 Not Found**: Cliente não encontrado."
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Customers (GET /customers)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/customers/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"customers",
+						""
+					]
+				},
+				"description": "### 3\\. Listar Todos os Clientes\n\n- **Método**: GET\n    \n- **URL**: `/v1/customers`\n    \n- **Descrição**: Lista todos os clientes cadastrados na base de dados.\n    \n- **Autorização**: Requer permissão `003`.\n    \n- **Respostas**:\n    \n    - **200 OK**: Lista de clientes retornada com sucesso.\n        \n    - **500 Internal Server Error**: Erro ao processar a solicitação."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Rewards Status By Customer Id (GET /customers/{id}/rewards-status)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/customers/1/rewards-status",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"customers",
+						"1",
+						"rewards-status"
+					]
+				},
+				"description": "### 4\\. Obter Status das Recompensas de um Cliente\n\n- **Método**: GET\n    \n- **URL**: `/v1/customers/{id}/rewards-status`\n    \n- **Descrição**: Obtém o status de recompensas de um cliente específico.\n    \n- **Autorização**: Requer permissão `004`.\n    \n- **Parâmetros de URL**:\n    \n    - `id`: Identificador do cliente.\n        \n- **Respostas**:\n    \n    - **200 OK**: Status das recompensas do cliente retornado com sucesso.\n        \n    - **404 Not Found**: Cliente não encontrado."
+			},
+			"response": []
+		},
+		{
+			"name": "Add Points to Customer (POST /customers/{customerId}/points)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"spent_value\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/customers/1/points",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"customers",
+						"1",
+						"points"
+					]
+				},
+				"description": "### 5\\. Adicionar Pontos a um Cliente\n\n- **Método**: POST\n    \n- **URL**: `/v1/customers/{id}/points`\n    \n- **Descrição**: Adiciona pontos ao cliente especificado.\n    \n- **Autorização**: Requer permissão `005`.\n    \n- json`{ \"points\": 100}`\n    \n- **Parâmetros de URL**:\n    \n    - `id`: Identificador do cliente.\n        \n- **Respostas**:\n    \n    - **200 OK**: Pontos adicionados com sucesso.\n        \n    - **400 Bad Request**: Dados inválidos ou falta de informações obrigatórias."
+			},
+			"response": []
+		},
+		{
+			"name": "Redeem Reward By Customer (POST /customer/{id}/reward/{rewardId}/redeem",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/customers/1/rewards/3/redeem",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"customers",
+						"1",
+						"rewards",
+						"3",
+						"redeem"
+					]
+				},
+				"description": "### 6\\. Resgatar Recompensa\n\n- **Método**: POST\n    \n- **URL**: `/v1/customers/{id}/rewards/{rewardId}/redeem`\n    \n- **Descrição**: Permite que um cliente resgate uma recompensa específica.\n    \n- **Autorização**: Requer permissão `006`.\n    \n- **Parâmetros de URL**:\n    \n    - `id`: Identificador do cliente.\n        \n    - `rewardId`: Identificador da recompensa.\n        \n- **Respostas**:\n    \n    - **200 OK**: Recompensa resgatada com sucesso.\n        \n    - **400 Bad Request**: Dados inválidos ou cliente/recompensa não encontrados.\n        \n    - **403 Forbidden**: Cliente não possui pontos suficientes para o resgate."
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "4b5f8f32c96a9aa152e0c6615d4e632f",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

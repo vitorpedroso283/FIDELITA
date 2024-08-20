@@ -1,66 +1,125 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Documentação Fidelita API 
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Introdução
 
-## About Laravel
+**Fidelita API** é uma aplicação desenvolvida como teste técnico para a empresa Fidelize. O nome "Fidelita" é uma homenagem à minha fiel companheira de código, minha gata Lolita, que sempre esteve ao meu lado durante o desenvolvimento. A aplicação é projetada para gerenciar e processar pontos de clientes, permitindo a acumulação e resgate de recompensas, solucionando a problemática que foi proposta pela Fidelize.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Arquitetura
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+A arquitetura da aplicação é baseada em Laravel, um framework PHP robusto e moderno que facilita o desenvolvimento de aplicações web seguras e escaláveis. A aplicação segue uma estrutura organizada, utilizando os melhores padrões de desenvolvimento para garantir um código limpo e fácil de manter.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Componentes Principais
 
-## Learning Laravel
+1. **Controladores (Controllers)**:
+   - **CustomerController**: Gerencia o resgate de recompensas pelos clientes.
+   - **PointController**: Gerencia a adição de pontos aos clientes com base em suas compras.
+   - **RewardController**: Gerencia o resgate de recompensas pelos clientes.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. **Serviços (Services)**:
+   - **CustomerService**: Contém a lógica para retornar e criar dados de clientes.
+   - **PointService**: Contém a lógica para calcular e processar pontos de clientes.
+   - **RewardService**: Contém a lógica para resgatar recompensas e enviar notificações por e-mail.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+3. **Modelos (Models)**:
+   - **Customer**: Representa a tabela customer do banco, onde armazenam os clientes.
+   - **Point**: Representa a tabela point, onde armazenam os pontos acumulados por um cliente.
+   - **Purchase**: Representa a tabela purchase do banco, onde armazernam compras realizadas por um cliente.
+   - **Reward**: Representa a tabela reward do banco de dados, onde armazenam as recompensas disponíveis para resgate.
+   - **Redemption**: Representa a tabela redemption, onde armazenam os resgates de uma recompensa por um cliente.
+   - **Token**: Representa a tabela token, onde armazenam os tokens de autenticação dos endpoints e suas devidas permissões.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+4. **Jobs**:
+   - **NotifyCustomerWithMaxPoints**: Envia um e-mail para clientes que possuem pontos suficientes para resgatar a recompensa máxima.
 
-## Laravel Sponsors
+5. **Comandos Artisan**:
+   - **DispatchNotifyCustomerWithMaxPoints**: Comando para notificar clientes sobre recompensas disponíveis quando atingem o máximo de pontos.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Requisitos
 
-### Premium Partners
+- PHP 8.2
+- Laravel 11
+- MySQL 
+- Composer
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Como Rodar a Aplicação
 
-## Contributing
+1. **Clone o Repositório**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   ```bash
+   git clone https://github.com/vitorpedroso283/FIDELITA.git
+   cd FIDELITA
+   ```
 
-## Code of Conduct
+2. **Instale as Dependências**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   Use o Composer para instalar as dependências do backend.
 
-## Security Vulnerabilities
+   ```bash
+   composer install
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3. **Configure o Ambiente**
 
-## License
+   Renomeie o arquivo `.env.example` para `.env` e configure suas variáveis de ambiente, incluindo as configurações do banco de dados. Algumas configurações já foram definidas para facilitar o start do projeto.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   ```bash
+   cp .env.example .env
+   ```
+
+   Edite o arquivo `.env` para incluir as credenciais do seu banco de dados e outras configurações necessárias.
+
+4. **Gere a Chave de Aplicação**
+
+   ```bash
+   php artisan key:generate
+   ```
+
+5. **Execute as Migrações do Banco de Dados e os Seeders para popular as tabelas necessárias**
+
+   ```bash
+   php artisan migrate
+   php artisan db:seed
+   ```
+
+6. **Inicie o Servidor**
+
+   Para rodar o servidor de desenvolvimento, utilize o comando:
+
+   ```bash
+   php artisan serve
+   ```
+
+   A aplicação estará disponível em `http://localhost:8000.
+   
+   
+7. **Importe a collection presente no repositório**
+Existe um arquivo dentro do repositório chamado de  Customer.postman_collection.json. Esse é o arquivo json da collection Customer com os 6 Endpoints necessários da aplicação. Importe ele dentro do postman para testar a API.
+
+## Considerações Finais
+
+A Fidelita API foi projetada com os seguintes pontos em mente:
+
+- **Autenticação**: Não foram utilizadas bibliotecas de autenticação padrão. Em vez disso, foram utilizados tokens fixos e um middleware personalizado foi criado para gerenciar a autenticação.
+  
+- **Processamento de Emails**: Os emails foram configurados para serem processados em segundo plano utilizando queues. No entanto, para a apresentação do teste, o driver `sync` foi utilizado como conexão para facilitar a utilização e garantir que os emails sejam enviados imediatamente.
+
+- **Comandos Artisan para CronJobs:** Pensando em utilizar toda a estrutura do Laravel, foi criado um novo comando no arquivo console.php dentro de /routes/ para verificar os clientes com a pontuação suficiente para resgatar o prêmio máximo. Em ambiente de testes, usarei os comandos:
+``` bash
+php artisan schedule:list
+php artisan schedule:run
+php artisan schedule:work
+```
+    Obs: não instalei nenhum sistema de verificação de filas, como o horizon ou o supervisor, mas será possível ver a instalação bem sucedida do comando.
+
+- **Princípios de Design**: A API segue os princípios de responsabilidade única, com métodos e classes bem definidos e com uma única responsabilidade. Os nomes dos métodos são projetados para refletir claramente suas funções, o que contribui para a limpeza e manutenção do código.
+- **Uso de Services e ausência de Repositories:** Na nossa arquitetura, Services são usados para encapsular a lógica de negócios, enquanto os Controllers se concentram em receber e validar requisições, delegando a execução para os serviços. Optamos por não utilizar Repositories devido à simplicidade das operações de banco de dados, aproveitando a camada de abstração robusta oferecida pelo Eloquent ORM.
+
+- **Documentação**: Comentários em PHPDoc foram utilizados para descrever as funções e métodos, proporcionando uma melhor compreensão do código e facilitando a manutenção.
+
+Obrigado por utilizar a Fidelita API!
+
+Aproveitem para prestigiar a obra de arte que é a minha gatinha também 😉.
+
+![WhatsApp Image 2024-08-19 at 23.12.24.jpeg](https://api.apidog.com/api/v1/projects/637470/resources/344161/image-preview)
+
+![WhatsApp Image 2024-08-19 at 23.12.40.jpeg](https://api.apidog.com/api/v1/projects/637470/resources/344162/image-preview)

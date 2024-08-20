@@ -1,6 +1,6 @@
 <?php
 
-namespace Workbench\Database\Seeders;
+namespace Database\Seeders;
 
 use Database\Seeders\RewardSeeder;
 use Database\Seeders\TokensTableSeeder;
