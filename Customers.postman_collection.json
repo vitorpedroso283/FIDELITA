@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d784d7cb-7b19-4ff3-be20-8ce004edbfc1",
+		"_postman_id": "5506c1c3-ba21-410f-be61-a3391ef235cb",
 		"name": "Customer",
 		"description": "Esta coleção documenta os endpoints da API relacionados à gestão de clientes, pontos e recompensas na aplicação Fidelita. Abaixo estão descritos os detalhes de cada endpoint disponível para interagir com a API.\n\n---\n\nEssa documentação fornece uma visão geral dos endpoints da API para gerenciamento de clientes, pontos e recompensas. Adapte conforme necessário e adicione exemplos de resposta e detalhes adicionais que possam ser úteis para os desenvolvedores que utilizarão essa APEsta coleção documenta os endpoints da API relacionados à gestão de clientes, pontos e recompensas na aplicação Fidelita. Abaixo estão descritos os detalhes de cada endpoint disponível para interagir com a API.\n\n---\n\n**AUTORIZAÇÃO:** Por padrão, todas as requests dessas collection herdam o Bearer da colletiction, para facilitar a troca dos tokens de uma só vez para todas as rotas.\n\n**VARIÁVEIS DE AMBIENTE:** Se faz necessário a criação de um ambiente para a API e a criação da variável **BASE_URL**, com o valor do endereço padrão da API. Por exemplo **http://localhost:8000/api/v1**",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -93,9 +93,9 @@
 			"response": []
 		},
 		{
-			"name": "Add Points to Customer (POST /customers/{customerId}/points)",
+			"name": "Add Points to Customer (PATCH /customers/{customerId}/points)",
 			"request": {
-				"method": "POST",
+				"method": "PATCH",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -122,9 +122,9 @@
 			"response": []
 		},
 		{
-			"name": "Redeem Reward By Customer (POST /customer/{id}/reward/{rewardId}/redeem",
+			"name": "Redeem Reward By Customer (PATCH /customer/{id}/reward/{rewardId}/redeem",
 			"request": {
-				"method": "POST",
+				"method": "PATCH",
 				"header": [],
 				"url": {
 					"raw": "{{BASE_URL}}/customers/1/rewards/3/redeem",
