@@ -7,4 +7,4 @@ use Illuminate\Support\Facades\Artisan;
 
 Artisan::command('notify:customers-max-points', function () {
     $this->call(DispatchNotifyCustomerWithMaxPoints::class);
-})->purpose('Notify customers who have enough points to redeem the maximum reward.')->schedule()->dailyAt('10:10');
+})->purpose('Notify customers who have enough points to redeem the maximum reward.')->schedule()->daily();
