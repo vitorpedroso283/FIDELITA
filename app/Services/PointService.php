@@ -47,7 +47,7 @@ class PointService
             $this->updateCustomerPoints($customer, $points);
 
             // Sends an email to the customer informing them that they earned points
-            Mail::to($customer->email)->queue(new PointsEarnedMail($customer, $points));
+            // Mail::to($customer->email)->queue(new PointsEarnedMail($customer, $points));
         }
     }
 

@@ -16,6 +16,6 @@ Route::prefix('v1')->group(function () {
     Route::get('customers/{identifier}', [CustomerController::class, 'show'])->middleware('check.permissions:002');
     Route::get('customers', [CustomerController::class, 'index'])->middleware('check.permissions:003');
     Route::get('customers/{id}/rewards-status', [CustomerController::class, 'getCustomerRewardsStatus'])->middleware('check.permissions:004');
-    Route::patch('customers/{id}/points', [PointController::class, 'store'])->middleware('check.permissions:005');
+    Route::post('customers/{id}/points', [PointController::class, 'store'])->middleware('check.permissions:005');
     Route::patch('customers/{id}/rewards/{rewardId}/redeem', [RewardController::class, 'redeem'])->middleware('check.permissions:006');
 });
