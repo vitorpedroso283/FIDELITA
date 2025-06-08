@@ -5,7 +5,7 @@
 A Fidelita API é uma aplicação desenvolvida para servir um programa de fidelidade. O nome "Fidelita" é uma homenagem à minha fiel companheira de código, minha gata Lolita, que sempre esteve ao meu lado durante o desenvolvimento da aplicação.
 
 ## Objetivo da Aplicação:
-A Fidelita API foi projetada para gerenciar e processar pontos de clientes, permitindo a acumulação e resgate de recompensas. A aplicação atende à problemática proposta pela Fidelize, que visa implementar um programa de fidelidade para seus clientes. O sistema permite que cada cliente ganhe 1 ponto a cada R$5,00 gastos e possibilita o resgate de prêmios com base no saldo de pontos acumulado.
+A Fidelita API foi projetada para gerenciar e processar pontos de clientes, permitindo a acumulação e resgate de recompensas. A aplicação atende à problemática deimplementar um programa de fidelidade para seus clientes. O sistema permite que cada cliente ganhe 1 ponto a cada R$5,00 gastos e possibilita o resgate de prêmios com base no saldo de pontos acumulado.
 
 ## Arquitetura
 
